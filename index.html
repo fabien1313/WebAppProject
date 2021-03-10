@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<title>Survivor or Zombie</title>
+
+<style>
+.jumbotron {
+padding: 2rem 1rem;
+margin-bottom: 2rem;
+background: url('zombiebackground.jpg');
+border-radius: .3rem;
+background-size: cover;
+width: 90%;
+max-width: 900px;
+position: relative;
+margin: auto;
+}
+
+.display-4 {
+color: #AD1A09;
+text-align: center;
+font-weight: bold;
+font-size:50px;
+}
+
+.section {
+width: 90%; 
+max-width: 900px;
+position: relative;
+margin: auto;
+background-color: #AD1A09;
+background-size: cover;
+border-radius: .3rem;
+margin-bottom: 2rem;
+padding: 2rem 1rem;
+}
+
+body {
+margin: 0;
+font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+background-color: black;
+text-align: left;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+    <div class="jumbotron">  <!--Jumbotron open-->
+        <h1 class="display-4">Can your survive the zombie apocalypse</h1>
+        <p class="lead"> </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p></p>
+    </div>                  <!--Jumbotron closing-->
+
+
+
+
+
+
+<div class="section"> <!-- section opening-->
+
+
+  <form id="form1">
+
+  <h3>It is Saturday morning and you are pulled from a sound dream by horrific screaming. As you are gaining your composure you can hear your neighbor pounding and screaming to please let her in. As you slowly approach the door you look through the peephole before answering only to see your neighbor hurt and covered in what looks to be blood. Before you can reach for the door knob you see three figures running with unlimited stamina and growling savagely. Frozen and unable to react you witness the cruel pounding and what looks to be a feast on your welcome matt as your neighbor loses her voice and becomes silent. You are the only one in the house. What do you do next?</h3>
+
+  <h2>First order of business</h2>
+  <label for="first"><input type="radio" name="frozen" value="20" id="first" />Call the police and get help.</label>
+  <br/>
+  <label for="savage"><input type="radio" name="frozen" value="0" id="savage" />Confront the three savage figures head on and then call the police.</label>
+  
+
+  <h2>Cell service and the internet are down. The chaos outside is getting worse. You turn on the news and discover that a state of emergency has been declared. “Stay inside, keep away from infected, wait for help to arrive!” You turn around and see one of the zombies looking at you through the living room window. The zombie slams against the glass and ravages its way in.</h2>
+  <label for="cell"><input type="radio" name="outside" value="20" id="cell"/>Run to the hallway and grab the bat in the closet.</label>
+  <br/>
+  <label for="service"><input type="radio" name="outside" value="0" id="service"/>Fight the zombie head on with your fists, there’s only one.</label>
+  
+ 
+
+  <h2>With the chaos worsening and the day becoming dimmer you realize that you have been injured by the zombie from earlier. You have a scratch on your hand, and it starts to become tender.</h2>
+  <label for="chaos"><input type="radio" name="scratch" value="20" id="chaos" />Do you remove your hand to stop the spread of the virus?</label>
+  <br/>
+  <label for="injured"><input type="radio" name="scratch" value="0" id="injured" />Bandage it up, it’s not a bite I’m not worried.</label>
+
+
+  <h2>Now that you have chosen a way to proceed with your injury you must advise some kind of strategy to survive. You use the emergency radio to get help. The frequency goes berserk and becomes very loud. You rush to turn it off, but you hear growling footsteps approaching nearby. Banging on the front door begins.</h2>
+  <label for="survive"><input type="radio" name="emergency" value="20" id="survive" />Stay quite and hide. Surely they will lose interest.</label>
+  <br/>
+  <label for="strategy"><input type="radio" name="emergency" value="0" id="strategy" />Fight, and take out as many as you can before they attract more.</label>
+
+
+  <h2>You manage to survive the night. You notice that ever since your injury occurred you have not been feeling well. You are very tired, malnourished and have a growing headache. You can hear rustling in your neighbor’s home. You hear your neighbor’s daughter scream. You know that she is in elementary and has no means to protect herself. You think you might be infected already so do you risk your life to save hers or are you just fatigued from being alert day and night and do nothing choosing to survive.</h2>
+  <label for="night"><input type="radio" name="qone" value="0" id="night" />You think you might already be infected so you choose to risk your life saving the little girl.</label>
+  <br/>
+  <label for="infected"><input type="radio" name="qone" value="20" id="infected" />I’m going through a lot. I’m just tired, drained, and hungry. Survival of the fittest instincts tell me to stay put.</label>
+
+  <br/>
+  <br/>
+  <br/>
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+
+<br/>
+<br/>
+
+<!-- <p>Your grade is: <span id="grade">__</span></p> -->
+<p id="grade2"></p>
+
+</div>  <!-- section closing-->
+
+<script>
+document.getElementById("form1").onsubmit=function() {
+    frozen = parseInt(document.querySelector('input[name = "frozen"]:checked').value);
+    outside = parseInt(document.querySelector('input[name = "outside"]:checked').value);
+    scratch = parseInt(document.querySelector('input[name = "scratch"]:checked').value);
+    emergency = parseInt(document.querySelector('input[name = "emergency"]:checked').value);
+    qone = parseInt(document.querySelector('input[name = "qone"]:checked').value);
+    
+     
+     
+    result = frozen + outside + scratch + emergency + qone;
+     
+  //document.getElementById("grade").innerHTML = result;
+
+  //End of result
+
+
+
+    if (result == 0) {result2 = "You are about as useful as raw hamburger meat on a bun. You fail to save the little girl next door. By day 2 you have become deathly malnourished and hallucinations have begun to deteriorate your mind. You have been ravaged by a horde of zombies.<br /><img src='zombie0.jpg' width='300' />"};
+    if (result == 20) {result2 = "At this point your success surviving is as good as hot dog water. You are unable to help the little neighbor girl in time to be effective. The zombies from next store have created such a ruckus that zombies start to walk the area around you all to commonly. Due to a sneeze that gives away your position, you are viciously torn to bits by zombies.<br /><img src='zombie20.jpg' width='300' />"};
+    if (result == 40) {result2 = "Survival isn't for everyone. You have been infected and start to hallucinate. Zombies begin to hear you muttering to yourself as your mind begins to break reality. Your home is approached by a horde of over 30 zombies. Already struck with fear from your hallucination, you run and get away. You pass out from exhaustion and become devoured in your sleep.<br /><img src='zombie40.png' width='300' />"};
+    if (result == 60) {result2 = "You are about as useful as raw hamburger meat on a bun. You fail to save the little girl next door. By day 2 you have become deathly malnourished and hallucinations have begun to deteriorate your mind. You have been ravaged by a horde of zombies.<br /><img src='zombie60.jpg' width='300' />"};
+    if (result == 80) {result2 = "You can't always save everyone. It was a good attempt but we all know the little neighbor girl was a goner from the beginning. You couldn't help yourself so you peeked once the neighbor's house became quiet. You step on a piece of glass and gather the attention of 3 blood thirsty zombies. At first you create a gap and look to out run them. However, you start to hit exhaustion as the zombies never lose pace. You are out matched as you are dragged down and ripped into by three sets of flesh filled teeth.<br /><img src='zombie80.jpg' width='300' />"};
+    if (result == 100) {result2 = "You are a survivor indeed. You have survived the night and have moved passed your injuries and set backs. You become familiar with moving only at night and scavenging what you can to survive throughout the day. You fortify what used to be your home into what is now your base of operations. As time progresses zombies aren't the only thing you have to worry about. Stay out of site, out of mind and Watch your back for looters.  <br /><img src='zombie100.jpg' width='300' />"};
+    document.getElementById("grade2").innerHTML = result2; 
+
+    //End of result 2
+
+
+
+
+     
+
+
+return false; // required to not refresh the page; just leave this here
+} //this ends the submit function
+
+</script>
+
+</body>
+</html>
